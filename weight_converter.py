@@ -7,9 +7,21 @@ def from_kg():
     pound = float(c.get()) * 2.20462
     ounce = float(c.get()) * 35.274
 
+    table1.delete("1.0", END)
+    table1.insert(END, gram)
+
+    table2.delete("1.0", END)
+    table2.insert(END, pound)
+
+    table3.delete("1.0", END)
+    table3.insert(END, ounce)
+
 a = Label(root, text = "Enter the Weight in kg: ")
 c = StringVar()
 b = Entry(root, textvariable = c)
+
+button = Button(root, text = "Convert", command = from_kg)
+button.grid(row = 0, column = 2)
 
 a.grid(row = 0, column = 0)
 b.grid(row = 0, column = 1)
